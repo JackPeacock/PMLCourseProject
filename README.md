@@ -5,7 +5,7 @@ This repo is created as part of the [Practical Machine Learning Class](https://w
 
 ---
 
-The aim of the project was to build a model which classified someone's weight lifting form into 5 different correct or incorrect categories. This is done using data from accelerometers located on various different positions of the particpants. After the model was built, it had to be used on the test data. The problem_id_1.txt, problem_id_2.txt, ... files are the results of using the model on the test data and they are what needed to be submitted to Coursera for grading. The full instructions for the project are shown below.
+The aim of the project was to build a model which classified someone's weight lifting form into 5 different correct or incorrect categories. This is done using data from accelerometers located on various different positions of the participants. After the model was built, it had to be used on the test data. The problem_id_1.txt, problem_id_2.txt, ... files are the results of using the model on the test data and they were needed to be submitted to Coursera for grading. The full instructions for the project are shown below.
 
 ---
 
