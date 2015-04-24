@@ -8,7 +8,7 @@ Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible t
 The training data being used for this project is available from https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv and the test data is available from https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv. Here the data is loaded into R.
 
 ```{r}
-setwd("~/datasciencecoursera/Practical Machine Learning/courseProject/")
+setwd("~/datasciencecoursera/Practical Machine Learning/PMLCourseProject/")
 data <- read.csv("pml-training.csv")
 testing <- read.csv("pml-testing.csv")
 ```
@@ -24,7 +24,7 @@ testing <- testing[,-7:-1]
 
 The data is then split into a smaller training set and a larger test set. There are two reasons for this:
 
-* Building a random forest model with the full set of training data is very computationally intensive and can take a long time. Good accuracies can be achieved with just a smaller fraction.
+* Building a random forest model with the full set of training data is very computationally intensive and can take a long time. Good accuracies can be achieved with just a smaller fraction of the data.
 * If we do this multiple times it is cross validation which can be used to predict out of sample accuracy. We will build three models and take the average of the accuracy of the models.
 
 ```{r cache=TRUE}

@@ -66,7 +66,7 @@ img {
 
 <p>Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible to collect a large amount of data about personal activity relatively inexpensively. These type of devices are part of the quantified self movement – a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. One thing that people regularly do is quantify how much of a particular activity they do, but they rarely quantify how well they do it. The objective of this project is to train a model to tell a weight lifter if they are doing the exercise correctly or how they are doing it wrong.</p>
 <p>The training data being used for this project is available from <a href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv">https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv</a> and the test data is available from <a href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv">https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv</a>. Here the data is loaded into R.</p>
-<pre class="r"><code>setwd(&quot;~/datasciencecoursera/Practical Machine Learning/courseProject/&quot;)
+<pre class="r"><code>setwd(&quot;~/datasciencecoursera/Practical Machine Learning/PMLCourseProject/&quot;)
 data &lt;- read.csv(&quot;pml-training.csv&quot;)
 testing &lt;- read.csv(&quot;pml-testing.csv&quot;)</code></pre>
 <p>The data contains a lot of predictors which are predominantly NA values or empty strings. These predictors can be removed to speed up the building of the model. Other columns being removed are names of the participants, time stamps and the labelling of the measurement windows. To an end user in the everyday environment of the gym these predictors will make no sense.</p>
@@ -76,7 +76,7 @@ testing &lt;- testing[,!(testing[1,] == &quot;&quot; | is.na(testing[1,]))]
 testing &lt;- testing[,-7:-1]</code></pre>
 <p>The data is then split into a smaller training set and a larger test set. There are two reasons for this:</p>
 <ul>
-<li>Building a random forest model with the full set of training data is very computationally intensive and can take a long time. Good accuracies can be achieved with just a smaller fraction.</li>
+<li>Building a random forest model with the full set of training data is very computationally intensive and can take a long time. Good accuracies can be achieved with just a smaller fraction of the data.</li>
 <li>If we do this multiple times it is cross validation which can be used to predict out of sample accuracy. We will build three models and take the average of the accuracy of the models.</li>
 </ul>
 <pre class="r"><code>library(kernlab); library(caret)</code></pre>
